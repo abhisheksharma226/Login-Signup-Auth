@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended : true }));
 
 //routes
 app.use("/" , staticRouter);
+app.use("/" , userRoute);
 // app.use("/chat" , userRoute);
 // app.use("/signup" , userRoute);
 

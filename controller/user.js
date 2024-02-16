@@ -9,7 +9,7 @@ async function handleSignUp(req ,res){
             email,
             password,
         });
-        return res.redirect("/login");
+        return res.redirect("/home");
     } catch (error) {
         console.error("Error during user creation:", error.message);
         return res.status(500).send("Internal Server Error");

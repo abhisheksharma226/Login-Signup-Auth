@@ -1,12 +1,13 @@
 const express = require("express");
-const { handleMessages }= require("../controller/user");
+const { handleLogin , handleSignUp , }= require("../controller/user");
 
 
 const router = express.Router();
 
 
-router.get("/" , handleMessages);
+router.post("/" , handleSignUp);
 
+router.post("/login" , handleLogin);
 // router.post("/" , handleMessages);
 
 

@@ -8,6 +8,7 @@ const PORT = 3000;
 
 
 const userRoute = require("./routes/user");
+const staticRouter = require("./routes/staticRouter");
 
 
 //connection to DataBase
@@ -24,11 +25,13 @@ app.set("views" , path.resolve("./views"));
 
 //middlewares
 app.use(express.json());
-app.use(express.urlencoded({ extended : false }));
+app.use(express.urlencoded({ extended : true }));
 
 
 //routes
-app.use("/chat" , userRoute);
+app.use("/" , staticRouter);
+// app.use("/chat" , userRoute);
+// app.use("/signup" , userRoute);
 
 
 

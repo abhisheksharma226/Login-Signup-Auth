@@ -3,11 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messenger</title>
+    <title>Chatting Website</title>
+    <style>
+        /* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header, footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+}
+
+.side-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #34495e;
+    color: #fff;
+}
+
+.profile-section, .contact-list {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.profile-section h2, .contact-list h2 {
+    margin-bottom: 10px;
+}
+
+.chat-section {
+    flex: 3;
+    display: flex;
+}
+
+.chat-list, .chat-window {
+    flex: 1;
+    padding: 20px;
+}
+
+.chat-list h2, .chat-window .chat-header h2 {
+    margin-bottom: 10px;
+}
+
+.chat-list ul {
+    list-style-type: none;
+}
+
+.chat-list ul li {
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.chat-list ul li:hover {
+    background-color: #ecf0f1;
+    cursor: pointer;
+}
+
+.chat-window {
+    background-color: #fff;
+    margin-left: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message-input {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.message-input input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.message-input button {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-input button:hover {
+    background-color: #34495e;
+}
+
+    </style>
 </head>
 <body>
-    <h1>
-        Welcome back to Messenger 
-    </h1>
+    <div class="container">
+        <header>
+            <h1>Chatting Website</h1>
+        </header>
+        <main>
+            <section class="side-section">
+                <div class="profile-section">
+                    <h2>Profile</h2>
+                    <!-- Profile information goes here -->
+                </div>
+                <div class="contact-list">
+                    <h2>Contacts</h2>
+                    <!-- List of contacts goes here -->
+                </div>
+            </section>
+            <section class="chat-section">
+                <section class="chat-list">
+                    <h2>Recent Chats</h2>
+                    <ul>
+                        <!-- Chat items will be dynamically added here -->
+                    </ul>
+                </section>
+                <section class="chat-window">
+                    <div class="chat-header">
+                        <h2>Friend Name</h2>
+                    </div>
+                    <div class="messages">
+                        <!-- Messages will be dynamically added here -->
+                    </div>
+                    <div class="message-input">
+                        <input type="text" placeholder="Type your message here...">
+                        <button>Send</button>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Chatting Website</p>
+        </footer>
+    </div>
 </body>
 </html>

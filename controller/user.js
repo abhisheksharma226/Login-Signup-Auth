@@ -9,16 +9,29 @@ async function handleSignUp(req ,res){
             email,
             password,
         });
-        return res.redirect("/home");
+        return res.redirect("/login");
     } catch (error) {
         console.error("Error during user creation:", error.message);
-        return res.status(500).send("Internal Server Error");
+        return res.status(500).send("This email already registered");
     }
 
 }
 
 async function handleLogin(req , res){
-    return res.render("login");
+    const { email , password  } = req.body;
+    try {
+        const user = await User.findOne({ email, password });
+        if (!user) {
+            return res.render("login", {
+                error: "Invalid email or password",
+            });
+        }
+        // Redirect to home page if login is successful
+        return res.redirect("/");
+    } catch (error) {
+        console.error("Error during login:", error.message);
+        return res.status(500).send("Internal Server Error");
+    }
    
 }
 

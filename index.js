@@ -9,6 +9,7 @@ const PORT = 3000;
 
 const userRoute = require("./routes/user");
 const staticRouter = require("./routes/staticRouter");
+const homeRoute = require("./routes/home")
 
 
 //connection to DataBase
@@ -31,6 +32,7 @@ app.use(express.urlencoded({ extended : true }));
 //routes
 app.use("/" , staticRouter);
 app.use("/" , userRoute);
+app.use("/home" , homeRoute);
 // app.use("/chat" , userRoute);
 // app.use("/signup" , userRoute);
 
